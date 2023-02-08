@@ -1,24 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.cpp                                        :+:      :+:    :+:   */
+/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pcampos- <pcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/02 15:14:14 by pcampos-          #+#    #+#             */
-/*   Updated: 2023/02/02 16:09:19 by pcampos-         ###   ########.fr       */
+/*   Created: 2023/02/02 15:06:58 by pcampos-          #+#    #+#             */
+/*   Updated: 2023/02/08 11:54:52 by pcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Contact.hpp"
-#include <iostream>
+#ifndef PHONEBOOK_H
+# define PHONEBOOK_H
 
-Contact::Contact()
-{
-	std::cout << "Contatc constructor called" << std::endl;
-}
+# include "Contact.hpp"
 
-Contact::~Contact()
+class PhoneBook
 {
-	std::cout << "Contatc destructor called" << std::endl;
-}
+private:
+	Contact	_contacts[8];
+	static int	_contact_n;
+	
+public:
+	PhoneBook();
+	~PhoneBook();
+
+	void	PhoneBook_add();
+	void	PhoneBook_search();
+};
+
+#endif

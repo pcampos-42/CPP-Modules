@@ -6,7 +6,7 @@
 #    By: pcampos- <pcampos-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/02 11:54:02 by pcampos-          #+#    #+#              #
-#    Updated: 2023/02/02 15:05:44 by pcampos-         ###   ########.fr        #
+#    Updated: 2023/02/08 16:35:53 by pcampos-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,11 +38,13 @@ _LIB    =
 
 CC      =        c++
 AR      =        ar rcs
-CFLAGS  =        -Wall -Werror -Wextra -std=c++98
+CFLAGS  =        -Wall -Werror -Wextra -std=c++98 -g #-fsanitize=address
 
 ############### FILES ################
 
-SRCS_   =        megaphone.cpp
+SRCS_   =        main.cpp \
+                 PhoneBook.cpp \
+				 Contact.cpp
 
 SRCS    =        $(addprefix $(_SRC), $(SRCS_))
 OBJS    =        $(patsubst $(_SRC)%.cpp, $(_OBJ)%.o, $(SRCS))
