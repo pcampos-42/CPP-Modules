@@ -6,7 +6,7 @@
 /*   By: pcampos- <pcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 11:42:03 by pcampos-          #+#    #+#             */
-/*   Updated: 2023/02/08 14:48:09 by pcampos-         ###   ########.fr       */
+/*   Updated: 2023/02/10 17:52:38 by pcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,9 @@ int	main()
 		std::cout << "ADD, SEARCH or EXIT" << std::endl;
 		std::cout << "> ";
 		std::getline (std::cin, input);
+		if (std::cin.eof())
+			return(1) ;
+		std::cout << std::endl;
 
 		for (size_t j = 0; j < input.size(); j++)
 			input[j] = toupper(input[j]);

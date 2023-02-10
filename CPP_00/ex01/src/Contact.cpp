@@ -6,7 +6,7 @@
 /*   By: pcampos- <pcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 15:14:14 by pcampos-          #+#    #+#             */
-/*   Updated: 2023/02/08 16:51:32 by pcampos-         ###   ########.fr       */
+/*   Updated: 2023/02/10 18:01:51 by pcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,10 @@
 
 Contact::Contact()
 {
-	std::cout << "Contact constructor called" << std::endl;
 }
 
 Contact::~Contact()
 {
-	std::cout << "Contact destructor called" << std::endl;
 }
 
 void	Contact::set_elements(std::string value, std::string option)
