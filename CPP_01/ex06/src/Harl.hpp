@@ -1,35 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.hpp                                         :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pcampos- <pcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/11 15:12:09 by pcampos-          #+#    #+#             */
-/*   Updated: 2023/02/14 11:29:10 by pcampos-         ###   ########.fr       */
+/*   Created: 2023/02/16 11:14:54 by pcampos-          #+#    #+#             */
+/*   Updated: 2023/02/16 12:28:56 by pcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANB_H
-# define HUMANB_H
+#ifndef HARL
+# define HARL
 
-#include "Weapon.hpp"
+# include <string>
+# include <iostream>
 
-class HumanB
+
+class Harl
 {
 private:
+	
+	void	debug() const;
+	void	info() const;
+	void	warning() const;
+	void	error() const;
 
-	std::string _name;
-	Weapon	*_weapon;
+	typedef	struct harl_funcs {
+		std::string	name;
+		void	(Harl::*func)() const;
+	}	funcs_ref;
+
+	funcs_ref funcs[4];
 	
 public:
 
-	HumanB(std::string name);
-	~HumanB();
+	Harl();
+	~Harl();
 
-	void	attack();
-	void	setWeapon(Weapon& weapon);
+	void	complain(std::string level);
 };
-
 
 #endif

@@ -1,35 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pcampos- <pcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/11 15:12:09 by pcampos-          #+#    #+#             */
-/*   Updated: 2023/02/14 11:29:10 by pcampos-         ###   ########.fr       */
+/*   Created: 2023/02/16 12:12:44 by pcampos-          #+#    #+#             */
+/*   Updated: 2023/02/16 12:47:33 by pcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANB_H
-# define HUMANB_H
+#include "Harl.hpp"
 
-#include "Weapon.hpp"
-
-class HumanB
+int main(int ac, char **av)
 {
-private:
+	Harl	Karen;
+	std::string	level;
 
-	std::string _name;
-	Weapon	*_weapon;
-	
-public:
+	if(ac != 2)
+	{
+		std::cout << "The correct way to use the program is: ./harlFilter [arg1]" << std::endl;
+		return (1);
+	}
 
-	HumanB(std::string name);
-	~HumanB();
-
-	void	attack();
-	void	setWeapon(Weapon& weapon);
-};
-
-
-#endif
+	level = av[1];
+	for (size_t j = 0; j < level.size(); j++)
+			level[j] = toupper(level[j]);
+			
+	Karen.complain(level);
+	return (0);
+}

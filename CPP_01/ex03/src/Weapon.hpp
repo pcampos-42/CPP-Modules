@@ -6,7 +6,7 @@
 /*   By: pcampos- <pcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 15:12:14 by pcampos-          #+#    #+#             */
-/*   Updated: 2023/02/11 16:06:52 by pcampos-         ###   ########.fr       */
+/*   Updated: 2023/02/14 11:21:31 by pcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ public:
 	~Weapon();
 
 	std::string	getType() const;
-	void	setType(std::string new_type);
+	void	setType(std::string const& new_type);
 };
 
 #endif
