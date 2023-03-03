@@ -6,7 +6,7 @@
 /*   By: pcampos- <pcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:52:47 by pcampos-          #+#    #+#             */
-/*   Updated: 2023/02/22 14:17:00 by pcampos-         ###   ########.fr       */
+/*   Updated: 2023/03/03 10:36:14 by pcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ Fixed&	Fixed::operator=(Fixed const & rhs)
 
 int	Fixed::getRawBits(void) const
 {
-	std::cout << "getRawBits member function called" << std::endl;
+	//std::cout << "getRawBits member function called" << std::endl;
 	return (this->_fixed_point);
 }
 
