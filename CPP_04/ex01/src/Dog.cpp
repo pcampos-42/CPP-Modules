@@ -6,7 +6,7 @@
 /*   By: pcampos- <pcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 11:29:50 by pcampos-          #+#    #+#             */
-/*   Updated: 2023/03/13 11:37:58 by pcampos-         ###   ########.fr       */
+/*   Updated: 2023/03/14 13:35:44 by pcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 Dog::Dog() : Animal()
 {
 	_type = "Dog";
+	_Brain = new Brain();
 	std::cout << "Dog Default constructor called." << std::endl;
 }
 
@@ -26,6 +27,7 @@ Dog::Dog(Dog const& src) : Animal(src)
 
 Dog::~Dog()
 {
+	delete _Brain;
 	std::cout << "Dog destructor called." << std::endl;
 }
 

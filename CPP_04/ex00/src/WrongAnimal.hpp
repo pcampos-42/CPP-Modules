@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pcampos- <pcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/13 10:11:29 by pcampos-          #+#    #+#             */
-/*   Updated: 2023/03/14 10:57:17 by pcampos-         ###   ########.fr       */
+/*   Created: 2023/03/14 10:43:30 by pcampos-          #+#    #+#             */
+/*   Updated: 2023/03/14 10:45:07 by pcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL
-# define ANIMAL
+#ifndef WRONGANIMAL
+# define WRONGANIMAL
 
 #include <string>
 #include <iostream>
 
-class Animal
+class WrongAnimal
 {
 private:
 	
@@ -24,13 +24,13 @@ protected:
 	std::string _type;
 public:
 
-	Animal();
-	Animal(Animal const& src);
-	virtual ~Animal();
+	WrongAnimal();
+	WrongAnimal(WrongAnimal const& src);
+	~WrongAnimal();
 
-	Animal& operator=(Animal const& rhs);
+	WrongAnimal& operator=(WrongAnimal const& rhs);
 
-	virtual void makeSound()const;
+	void makeSound()const;
 };
 
 #endif

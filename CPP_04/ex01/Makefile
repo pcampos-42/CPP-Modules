@@ -6,7 +6,7 @@
 #    By: pcampos- <pcampos-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/02 11:54:02 by pcampos-          #+#    #+#              #
-#    Updated: 2023/03/14 10:52:55 by pcampos-         ###   ########.fr        #
+#    Updated: 2023/03/14 13:32:56 by pcampos-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,7 +47,8 @@ SRCS_   =        main.cpp \
 				 Cat.cpp \
 				 Dog.cpp \
 				 WrongAnimal.cpp \
-				 WrongCat.cpp
+				 WrongCat.cpp \
+				 Brain.cpp
 
 SRCS    =        $(addprefix $(_SRC), $(SRCS_))
 OBJS    =        $(patsubst $(_SRC)%.cpp, $(_OBJ)%.o, $(SRCS))

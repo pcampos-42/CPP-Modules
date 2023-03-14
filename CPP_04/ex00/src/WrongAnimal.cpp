@@ -1,42 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pcampos- <pcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/13 11:29:50 by pcampos-          #+#    #+#             */
-/*   Updated: 2023/03/13 11:37:58 by pcampos-         ###   ########.fr       */
+/*   Created: 2023/03/14 10:42:49 by pcampos-          #+#    #+#             */
+/*   Updated: 2023/03/14 10:45:49 by pcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "WrongAnimal.hpp"
 
-Dog::Dog() : Animal()
+WrongAnimal::WrongAnimal()
 {
-	_type = "Dog";
-	std::cout << "Dog Default constructor called." << std::endl;
+	std::cout << "WrongAnimal Default constructor called." << std::endl;
 }
 
-Dog::Dog(Dog const& src) : Animal(src)
+WrongAnimal::WrongAnimal(WrongAnimal const& src)
 {
 	this->_type = src._type;
-	std::cout << "Dog Copy constructor called." << std::endl;
+	std::cout << "WrongAnimal Copy constructor called." << std::endl;
 }
 
-Dog::~Dog()
+WrongAnimal::~WrongAnimal()
 {
-	std::cout << "Dog destructor called." << std::endl;
+	std::cout << "WrongAnimal destructor called." << std::endl;
 }
 
-Dog&	Dog::operator=(Dog const& rhs)
+WrongAnimal&	WrongAnimal::operator=(WrongAnimal const& rhs)
 {
 	if(this != &rhs)
 		this->_type = rhs._type;
 	return(*this);
 }
 
-void	Dog::makeSound()const
+void	WrongAnimal::makeSound()const
 {
-	std::cout << "Bark!" << std::endl;
+	std::cout << "* random Wrong animal noise *" << std::endl;
 }
