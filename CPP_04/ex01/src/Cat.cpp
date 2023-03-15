@@ -6,7 +6,7 @@
 /*   By: pcampos- <pcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 11:08:23 by pcampos-          #+#    #+#             */
-/*   Updated: 2023/03/14 13:35:36 by pcampos-         ###   ########.fr       */
+/*   Updated: 2023/03/15 14:39:26 by pcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,19 @@ Cat&	Cat::operator=(Cat const& rhs)
 void	Cat::makeSound()const
 {
 	std::cout << "Meow!" << std::endl;
+}
+
+std::string	Cat::getIdea(int n)
+{
+	if (n < 0 || n > 99)
+		return(_Brain->ideas[rand() % 100]);
+	else
+		return(_Brain->ideas[n]);
+}
+
+void	Cat::setIdea(std::string const& str, int n)
+{
+	if (n < 0 || n > 99)
+		return ;
+	_Brain->ideas[n] = str;
 }

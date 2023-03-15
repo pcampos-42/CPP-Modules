@@ -6,7 +6,7 @@
 /*   By: pcampos- <pcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 15:01:01 by pcampos-          #+#    #+#             */
-/*   Updated: 2023/03/14 13:33:33 by pcampos-         ###   ########.fr       */
+/*   Updated: 2023/03/15 13:06:49 by pcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,28 @@
 
 int main()
 {
-	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
+	Animal* meta[10];
 
-	meta->makeSound();
-	j->makeSound();
-	i->makeSound();
+	for(int n = 0; n < 10; n++) 
+	{
+		if (n < 5)
+			meta[n] = new Cat();
+		else
+			meta[n] = new Dog();
+	}
 	
-	delete meta;
-	delete i;
-	delete j;
+	Cat* testcat = new Cat();
+
+	std::cout << ((Cat*)meta[0])->getIdea(0) << std::endl;
+	std::cout << testcat->getIdea(0) << std::endl;
+
+	testcat->setIdea("Arroz doce", 0);
+
+	std::cout << ((Cat*)meta[0])->getIdea(0) << std::endl;
+	std::cout << testcat->getIdea(0) << std::endl;
+
+	for(int n = 0; n < 10; n++) 
+		delete meta[n];
 	
 return 0;
 }

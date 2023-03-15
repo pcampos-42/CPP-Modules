@@ -6,7 +6,7 @@
 /*   By: pcampos- <pcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 11:29:50 by pcampos-          #+#    #+#             */
-/*   Updated: 2023/03/14 13:35:44 by pcampos-         ###   ########.fr       */
+/*   Updated: 2023/03/15 11:55:13 by pcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,12 @@ Dog&	Dog::operator=(Dog const& rhs)
 void	Dog::makeSound()const
 {
 	std::cout << "Bark!" << std::endl;
+}
+
+std::string	Dog::getIdea(int n)
+{
+	if (n < 0 || n > 99)
+		return(_Brain->ideas[rand() % 100]);
+	else
+		return(_Brain->ideas[n]);
 }

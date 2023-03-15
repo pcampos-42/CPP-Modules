@@ -6,7 +6,7 @@
 /*   By: pcampos- <pcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 11:29:10 by pcampos-          #+#    #+#             */
-/*   Updated: 2023/03/14 13:34:59 by pcampos-         ###   ########.fr       */
+/*   Updated: 2023/03/15 12:09:33 by pcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,13 @@
 
 #include "Animal.hpp"
 #include "Brain.hpp"
+#include <cstdlib>
 
 class Dog : public Animal
 {
 private:
 	
-	const Brain*	_Brain;
+	Brain*	_Brain;
 
 public:
 	Dog();
@@ -30,6 +31,7 @@ public:
 	Dog& operator=(Dog const& rhs);
 
 	virtual void makeSound()const;
+	std::string getIdea(int n);
 };
 
 #endif

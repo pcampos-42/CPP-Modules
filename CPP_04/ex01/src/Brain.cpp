@@ -6,7 +6,7 @@
 /*   By: pcampos- <pcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 11:50:56 by pcampos-          #+#    #+#             */
-/*   Updated: 2023/03/14 13:27:58 by pcampos-         ###   ########.fr       */
+/*   Updated: 2023/03/15 13:06:13 by pcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ Brain::Brain()
 {
 	std::ifstream	input;
 	input.open("ideas.txt");
-	for(int i = 0; i < 0; i++)
+	for(int i = 0; i < 99; i++)
 		getline(input, ideas[i]);
 	input.close();
 	std::cout << "Brain Default constructor called." << std::endl;
