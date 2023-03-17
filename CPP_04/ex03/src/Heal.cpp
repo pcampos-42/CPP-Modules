@@ -6,13 +6,13 @@
 /*   By: pcampos- <pcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 16:03:03 by pcampos-          #+#    #+#             */
-/*   Updated: 2023/03/15 16:09:23 by pcampos-         ###   ########.fr       */
+/*   Updated: 2023/03/17 14:50:34 by pcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Heal.hpp"
 
-Heal::Heal() : AMateria("Heal")
+Heal::Heal() : AMateria("heal")
 {}
 
 Heal::Heal(Heal const& src) : AMateria(src)
@@ -30,11 +30,10 @@ Heal& Heal::operator=(Heal const& rhs)
 
 AMateria* Heal::clone() const
 {
-	AMateria* ret = new Heal();
-	return(ret);
+	return(new Heal());
 }
 
 void Heal::use(ICharacter& target)
 {
-	std::cout << "* heals " << target << "’s wounds *" << std::endl;
+	std::cout << "* heals " << target.getName() << "’s wounds *" << std::endl;
 }

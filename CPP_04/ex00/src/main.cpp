@@ -6,7 +6,7 @@
 /*   By: pcampos- <pcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 15:01:01 by pcampos-          #+#    #+#             */
-/*   Updated: 2023/03/15 15:17:32 by pcampos-         ###   ########.fr       */
+/*   Updated: 2023/03/16 12:47:10 by pcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,14 @@ int main()
 	j->makeSound();
 	i->makeSound();
 
-	const WrongAnimal* wrongmeta = new WrongAnimal();
-	const WrongAnimal* wrongj = new WrongCat();
-	const WrongCat* wrongi = new WrongCat();
-	
 	delete meta;
 	delete i;
 	delete j;
 
+	const WrongAnimal* wrongmeta = new WrongAnimal();
+	const WrongAnimal* wrongj = new WrongCat();
+	const WrongCat* wrongi = new WrongCat();
+	
 	wrongmeta->makeSound();
 	wrongj->makeSound();
 	wrongi->makeSound();

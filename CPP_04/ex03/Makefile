@@ -6,7 +6,7 @@
 #    By: pcampos- <pcampos-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/02 11:54:02 by pcampos-          #+#    #+#              #
-#    Updated: 2023/03/15 15:19:55 by pcampos-         ###   ########.fr        #
+#    Updated: 2023/03/17 14:17:53 by pcampos-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,12 +38,16 @@ _LIB    =
 
 CC      =        c++
 AR      =        ar rcs
-CFLAGS  =        -Wall -Werror -Wextra -std=c++98
+CFLAGS  =        -Wall -Werror -Wextra -std=c++98 -g -fsanitize=address
 
 ############### FILES ################
 
 SRCS_   =        main.cpp \
-				 
+				 AMateria.cpp \
+				 Character.cpp \
+				 Heal.cpp \
+				 Ice.cpp \
+				 MateriaSource.cpp
 
 SRCS    =        $(addprefix $(_SRC), $(SRCS_))
 OBJS    =        $(patsubst $(_SRC)%.cpp, $(_OBJ)%.o, $(SRCS))
