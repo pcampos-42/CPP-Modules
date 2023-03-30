@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.cpp                                           :+:      :+:    :+:   */
+/*   AForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pcampos- <pcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 13:06:06 by pcampos-          #+#    #+#             */
-/*   Updated: 2023/03/30 14:44:48 by pcampos-         ###   ########.fr       */
+/*   Updated: 2023/03/30 16:57:19 by pcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Form.hpp"
+#include "AForm.hpp"
 
-Form::Form() : _name("Unnamed"), _signed(false), _sign(150), _exec(150)
+AForm::AForm() : _name("Unnamed"), _signed(false), _sign(150), _exec(150)
 {}
 
-Form::Form(std::string name, int sign, int exec) : _name(name), _signed(false), _sign(sign), _exec(exec)
+AForm::AForm(std::string name, int sign, int exec) : _name(name), _signed(false), _sign(sign), _exec(exec)
 {
 	if (sign < 1 || exec < 1)
 		throw (GradeTooHighExeption());
@@ -23,15 +23,15 @@ Form::Form(std::string name, int sign, int exec) : _name(name), _signed(false), 
 		throw (GradeTooLowExeption());
 }
 
-Form::Form(Form const& src) : _name(src._name), _sign(src._sign), _exec(src._exec)
+AForm::AForm(AForm const& src) : _name(src._name), _sign(src._sign), _exec(src._exec)
 {
 	this->_signed = src._signed;
 }
 
-Form::~Form()
+AForm::~AForm()
 {}
 
-Form& Form::operator=(Form const& rhs)
+AForm& AForm::operator=(AForm const& rhs)
 {
 	if(this != &rhs)
 	{
@@ -40,27 +40,27 @@ Form& Form::operator=(Form const& rhs)
 	return (*this);
 }
 
-std::string const Form::getName()
+std::string const AForm::getName()
 {
 	return(this->_name);
 }
 
-bool Form::getSigned()
+bool AForm::getSigned()
 {
 	return(this->_signed);
 }
 
-int Form::getSignGrade()
+int AForm::getSignGrade()
 {
 	return(this->_sign);
 }
 
-int Form::getExecGrade()
+int AForm::getExecGrade()
 {
 	return(this->_exec);
 }
 
-bool Form::beSigned(Bureaucrat bur)
+bool AForm::beSigned(Bureaucrat bur)
 {
 	if(bur.getGrade() > this->_sign)
 		return (false);
@@ -68,7 +68,10 @@ bool Form::beSigned(Bureaucrat bur)
 	return (true);
 }
 
-std::ostream & operator<<(std::ostream & output, Form & src)
+bool AForm::execute(Bureaucrat const & executor) const
+{}
+
+std::ostream & operator<<(std::ostream & output, AForm & src)
 {
 	if (src.getSigned() == true)
 		output << "Form : " << src.getName() << std::endl << "Signed : Yes" << std::endl << "Grade to sign : " << src.getSignGrade() << std::endl << "Grade to execute : " << src.getExecGrade() << std::endl;

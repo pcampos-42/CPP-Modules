@@ -6,12 +6,12 @@
 /*   By: pcampos- <pcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 10:40:44 by pcampos-          #+#    #+#             */
-/*   Updated: 2023/03/30 14:45:26 by pcampos-         ###   ########.fr       */
+/*   Updated: 2023/03/30 15:42:38 by pcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 
 Bureaucrat::Bureaucrat()
 {}
@@ -66,7 +66,7 @@ void Bureaucrat::decrementGrade()
 	this->_grade++;
 }
 
-void Bureaucrat::signForm(Form& form)
+void Bureaucrat::signForm(AForm& form)
 {
 	if(form.beSigned(*this) == true)
 		std::cout << this->_name << " signed " << form.getName() << std::endl;

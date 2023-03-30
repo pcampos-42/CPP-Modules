@@ -6,7 +6,7 @@
 /*   By: pcampos- <pcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 10:40:50 by pcampos-          #+#    #+#             */
-/*   Updated: 2023/03/30 14:21:08 by pcampos-         ###   ########.fr       */
+/*   Updated: 2023/03/30 15:41:42 by pcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <string>
 #include <iostream>
 
-class Form;
+class AForm;
 
 class Bureaucrat
 {
@@ -40,7 +40,7 @@ public:
 	void incrementGrade();
 	void decrementGrade();
 
-	void signForm(Form& form);
+	void signForm(AForm& form);
 
 	class GradeTooHighExeption :public std::exception
 	{
