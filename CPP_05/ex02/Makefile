@@ -6,7 +6,7 @@
 #    By: pcampos- <pcampos-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/02 11:54:02 by pcampos-          #+#    #+#              #
-#    Updated: 2023/03/28 15:46:47 by pcampos-         ###   ########.fr        #
+#    Updated: 2023/04/06 15:10:03 by pcampos-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,7 +44,11 @@ CFLAGS  =        -Wall -Werror -Wextra -std=c++98 -g -fsanitize=address
 
 SRCS_   =        main.cpp \
 				 Bureaucrat.cpp \
-				 Form.cpp
+				 AForm.cpp \
+				 PresidentialPardonForm.cpp \
+				 RobotomyRequestForm.cpp \
+				 ShrubberyCreationForm.cpp
+				 
 
 SRCS    =        $(addprefix $(_SRC), $(SRCS_))
 OBJS    =        $(patsubst $(_SRC)%.cpp, $(_OBJ)%.o, $(SRCS))

@@ -6,7 +6,7 @@
 /*   By: pcampos- <pcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 13:06:06 by pcampos-          #+#    #+#             */
-/*   Updated: 2023/03/30 16:57:19 by pcampos-         ###   ########.fr       */
+/*   Updated: 2023/04/05 16:07:21 by pcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,8 +68,19 @@ bool AForm::beSigned(Bureaucrat bur)
 	return (true);
 }
 
-bool AForm::execute(Bureaucrat const & executor) const
-{}
+void AForm::canExecute(Bureaucrat const& bur)
+{
+	if (_signed == false)
+	{
+		std::cout << bur.getName() << " couldn't execute " << _name << " because ";
+		throw (FormNotSigned());
+	}
+	if (bur.getGrade() < _exec)
+	{
+		std::cout << bur.getName() << " couldn't execute " << _name << " because ";
+		throw (GradeTooLowExeption());
+	}
+}
 
 std::ostream & operator<<(std::ostream & output, AForm & src)
 {

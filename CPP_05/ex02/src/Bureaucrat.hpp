@@ -6,7 +6,7 @@
 /*   By: pcampos- <pcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 10:40:50 by pcampos-          #+#    #+#             */
-/*   Updated: 2023/03/30 15:41:42 by pcampos-         ###   ########.fr       */
+/*   Updated: 2023/04/05 15:46:07 by pcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ public:
 	void decrementGrade();
 
 	void signForm(AForm& form);
+	void executForm(AForm const& form);
 
 	class GradeTooHighExeption :public std::exception
 	{

@@ -6,7 +6,7 @@
 /*   By: pcampos- <pcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 12:55:15 by pcampos-          #+#    #+#             */
-/*   Updated: 2023/03/30 16:57:10 by pcampos-         ###   ########.fr       */
+/*   Updated: 2023/04/06 15:03:03 by pcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,8 @@ public:
 	int getExecGrade();
 
 	bool beSigned(Bureaucrat bur);
-
-	virtual bool execute(Bureaucrat const & executor) const;
+	void canExecute(Bureaucrat const& bur);
+	virtual void execute(Bureaucrat const& executor) = 0;
 
 	class GradeTooHighExeption :public std::exception
 	{
@@ -63,6 +63,15 @@ public:
 		virtual const char* what() const throw()
 		{
 			return ("Grade Too Low");
+		}
+	};
+
+	class FormNotSigned :public std::exception
+	{
+	public:
+		virtual const char* what() const throw()
+		{
+			return ("form is not signed");
 		}
 	};
 };

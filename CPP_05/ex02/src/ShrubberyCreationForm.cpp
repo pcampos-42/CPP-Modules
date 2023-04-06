@@ -6,7 +6,7 @@
 /*   By: pcampos- <pcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 15:45:04 by pcampos-          #+#    #+#             */
-/*   Updated: 2023/03/30 17:00:42 by pcampos-         ###   ########.fr       */
+/*   Updated: 2023/04/06 12:50:28 by pcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,21 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(ShrubberyCreationForm co
 	return (*this);
 }
 
-bool ShrubberyCreationForm::execute(Bureaucrat const & executor) const
+void ShrubberyCreationForm::execute(Bureaucrat const & executor)
 {
+	canExecute(executor);
 	
+	std::ofstream of_fd;
+	of_fd.open((_target + "_shrubbery").c_str());
+	if (of_fd.is_open())
+	{
+		of_fd << "     ###           ###           ###     " << std::endl;
+		of_fd << "    #####         #####         #####    " << std::endl;
+		of_fd << "  #########     #########     #########  " << std::endl;
+		of_fd << " ###########   ###########   ########### " << std::endl;
+		of_fd << "  #########     #########     #########  " << std::endl;
+		of_fd << "   # }|{ #       # }|{ #       # }|{ #   " << std::endl;
+		of_fd << "     }|{           }|{           }|{     " << std::endl;
+		of_fd << " ____}|{___________}|{___________}|{_____" << std::endl;
+	}
 }

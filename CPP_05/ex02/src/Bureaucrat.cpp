@@ -6,7 +6,7 @@
 /*   By: pcampos- <pcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 10:40:44 by pcampos-          #+#    #+#             */
-/*   Updated: 2023/03/30 15:42:38 by pcampos-         ###   ########.fr       */
+/*   Updated: 2023/04/05 15:56:59 by pcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,9 +73,14 @@ void Bureaucrat::signForm(AForm& form)
 	else
 	{
 		std::cout << this->_name << " couldn't signed " << form.getName() << " because ";
-		throw (GradeTooLowExeption());
+			throw (GradeTooLowExeption());
 	}
 	
+}
+
+void Bureaucrat::executForm(AForm const& form)
+{
+	form.execute(*this);
 }
 
 std::ostream & operator<<(std::ostream & output, Bureaucrat & src)
