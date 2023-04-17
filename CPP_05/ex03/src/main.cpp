@@ -6,7 +6,7 @@
 /*   By: pcampos- <pcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 15:20:11 by pcampos-          #+#    #+#             */
-/*   Updated: 2023/04/13 14:10:39 by pcampos-         ###   ########.fr       */
+/*   Updated: 2023/04/17 16:23:57 by pcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,47 +15,34 @@
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include "Intern.hpp"
 
 int main()
 {
-	Bureaucrat bur("A", 150);
-	Bureaucrat bur2("B", 140);
-	Bureaucrat bur4("D", 1);
-	ShrubberyCreationForm shrub("arvoredo");
-	RobotomyRequestForm robo("marvin");
-	PresidentialPardonForm pres("Matilde");
+	Intern jovel;
+	AForm* form;
+	Bureaucrat bur = Bureaucrat("Big Boss", 1);
+	
+	try
+	{
+		form = jovel.makeForm("bambu", "restelo");
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	
+	try
+	{
+		form = jovel.makeForm("Shrub", "restelo");
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	
+	form->beSigned(bur);
+	form->execute(bur);
 
-	try {
-		bur.signForm(shrub);
-	}
-	catch (std::exception & error) {
-		std::cout << error.what() << std::endl;
-	}
-
-	try {
-		bur4.executeForm(shrub);
-	}
-	catch (std::exception & error) {
-		std::cout << error.what() << std::endl;
-	}
-
-	try {
-		bur4.signForm(shrub);
-	}
-	catch (std::exception & error) {
-		std::cout << error.what() << std::endl;
-	}
-
-	try {
-		bur2.executeForm(shrub);
-	}
-	catch (std::exception & error) {
-		std::cout << error.what() << std::endl;
-	}
-
-	bur4.executeForm(shrub);
-	bur4.signForm(robo);
-	bur4.executeForm(robo);
-	bur4.signForm(pres);
-	bur4.executeForm(pres);
+	delete form;
 }
