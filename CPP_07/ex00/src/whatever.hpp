@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   whatever.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pcampos- <pcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/25 15:08:36 by pcampos-          #+#    #+#             */
-/*   Updated: 2023/04/27 17:45:34 by pcampos-         ###   ########.fr       */
+/*   Created: 2023/05/05 17:48:54 by pcampos-          #+#    #+#             */
+/*   Updated: 2023/05/05 18:09:40 by pcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Serializer.hpp"
-#include <iostream>
+#ifndef WHATEVER
+# define WHATEVER
 
-int main()
-{
-	Data	*data;
-	Serializer	serializer;
+template< typename T >
+void	swap(T &a, T &b){
+	T	tmp = a;
+	a = b;
+	b = tmp;
+};
 
-	data = new Data();
-	std::cout << &data << std::endl;
-	data->setRaw(serializer.serialize(data));
-	std::cout << data->getRaw() << std::endl;
-	data = serializer.deserialize(data->getRaw());
-	std::cout << &data << std::endl;
-	delete data;
-}
+template< typename T >
+T		max(T a, T b){
+	return (a >= b ? a : b);
+};
+
+template< typename T >
+T		min(T a, T b){
+	return (a < b ? a : b);
+};
+
+#endif

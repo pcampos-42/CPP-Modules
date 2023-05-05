@@ -6,7 +6,7 @@
 /*   By: pcampos- <pcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 14:21:55 by pcampos-          #+#    #+#             */
-/*   Updated: 2023/04/25 15:03:37 by pcampos-         ###   ########.fr       */
+/*   Updated: 2023/04/27 17:44:43 by pcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -154,7 +154,7 @@ void	ScalarConverter::special_case(std::string &param)
 		std::cout << "float: " << param << "f" << std::endl;
 		std::cout << "double: " << param << std::endl;
 	}
-	else if(param == "nanf" || param == "+inff" || param == "-inf")
+	else if(param == "nanf" || param == "+inff" || param == "-inff")
 	{
 		std::cout << "float: " << param << std::endl;
 		param.erase(param.length() - 1);

@@ -5,24 +5,32 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: pcampos- <pcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/25 15:08:36 by pcampos-          #+#    #+#             */
-/*   Updated: 2023/04/27 17:45:34 by pcampos-         ###   ########.fr       */
+/*   Created: 2023/04/19 17:11:35 by pcampos-          #+#    #+#             */
+/*   Updated: 2023/05/05 18:04:53 by pcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Serializer.hpp"
+#include "whatever.hpp"
 #include <iostream>
 
 int main()
 {
-	Data	*data;
-	Serializer	serializer;
+	int a = 2;
+	int b = 3;
+	
+	::swap( a, b );
 
-	data = new Data();
-	std::cout << &data << std::endl;
-	data->setRaw(serializer.serialize(data));
-	std::cout << data->getRaw() << std::endl;
-	data = serializer.deserialize(data->getRaw());
-	std::cout << &data << std::endl;
-	delete data;
+	std::cout << "a = " << a << ", b = " << b << std::endl;
+	std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
+	std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
+	std::string c = "chaine1";
+	std::string d = "chaine2";
+
+	::swap(c, d);
+	
+	std::cout << "c = " << c << ", d = " << d << std::endl;
+	std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
+	std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
+	
+	return 0;
 }

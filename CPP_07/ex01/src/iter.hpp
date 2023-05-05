@@ -1,28 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pcampos- <pcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/25 15:08:36 by pcampos-          #+#    #+#             */
-/*   Updated: 2023/04/27 17:45:34 by pcampos-         ###   ########.fr       */
+/*   Created: 2023/05/05 18:13:14 by pcampos-          #+#    #+#             */
+/*   Updated: 2023/05/05 18:28:53 by pcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Serializer.hpp"
-#include <iostream>
+#ifndef ITER
+# define ITER
 
-int main()
-{
-	Data	*data;
-	Serializer	serializer;
+template< typename T >
+void	iter(T *array, int len, void (*f)(T const&)){
+	for(int i = 0, i < len, i++)
+		f(array[i]);
+};
 
-	data = new Data();
-	std::cout << &data << std::endl;
-	data->setRaw(serializer.serialize(data));
-	std::cout << data->getRaw() << std::endl;
-	data = serializer.deserialize(data->getRaw());
-	std::cout << &data << std::endl;
-	delete data;
-}
+#endif
