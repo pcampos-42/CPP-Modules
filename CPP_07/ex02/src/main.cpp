@@ -1,37 +1,54 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: pcampos- <pcampos-@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/15 11:46:11 by pcampos-          #+#    #+#             */
-/*   Updated: 2023/05/15 16:18:35 by pcampos-         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
+#include <iostream>
+#include <cstdlib> 
 #include "Array.hpp"
-#include "Bureaucrat.hpp"
 
-int main()
+#define MAX_VAL 750
+int main(int, char**)
 {
-	Array<Bureaucrat> office1(10);
-	Array<Bureaucrat> office2(office1);
+    Array<int> numbers(MAX_VAL);
+    int* mirror = new int[MAX_VAL];
+    srand(time(NULL));
+    for (int i = 0; i < MAX_VAL; i++)
+    {
+        const int value = rand();
+        numbers[i] = value;
+        mirror[i] = value;
+    }
+    //SCOPE
+    {
+        Array<int> tmp = numbers;
+        Array<int> test(tmp);
+    }
 
-	Bureaucrat bur1("antonio", 1);
-	office1[0] = bur1;
-	for(int i = 0; i < office1.size(); i++)
-		std::cout << office1[i] << std::endl;
-	std::cout << std::endl << std::endl;
-	for(int i = 0; i < office2.size(); i++)
-		std::cout << office2[i] << std::endl;
-	std::cout << std::endl << std::endl;
-	try
-	{
-		std::cout << office1[office1.size()] << std::endl;
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << "Index out of bounds" << std::endl;
-	}
+    for (int i = 0; i < MAX_VAL; i++)
+    {
+        if (mirror[i] != numbers[i])
+        {
+            std::cerr << "didn't save the same value!!" << std::endl;
+            return 1;
+        }
+    }
+    try
+    {
+        numbers[-2] = 0;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    try
+    {
+        numbers[MAX_VAL] = 0;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+
+    for (int i = 0; i < MAX_VAL; i++)
+    {
+        numbers[i] = rand();
+    }
+    delete [] mirror;
+    return 0;
 }

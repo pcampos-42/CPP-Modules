@@ -6,12 +6,14 @@
 /*   By: pcampos- <pcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 11:47:33 by pcampos-          #+#    #+#             */
-/*   Updated: 2023/05/15 16:06:41 by pcampos-         ###   ########.fr       */
+/*   Updated: 2023/05/16 11:04:18 by pcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ARRAY
 #define ARRAY
+
+#include <exception>
 
 template<typename T>
 class Array
@@ -36,8 +38,8 @@ public:
 		_content = new T[n];
 	};
 
-	Array(Array const &src) : _len(src->size()) {
-		this->_content = new T[src->size()];
+	Array(Array const &src) : _len(src._len) {
+		this->_content = new T[src._len];
 		*this = src;
 	}
 
@@ -46,12 +48,12 @@ public:
 	};
 
 	T& operator[](int index){
-		if (index >= this->_len)
-			throw std::exeption();
+		if (index >= this->_len || index < 0)
+			throw std::exception();
 		return (this->_content[index]);
 	}
 
-	int size() {return(_len)};
+	int size() {return(this->_len);}
 };
 
 #endif

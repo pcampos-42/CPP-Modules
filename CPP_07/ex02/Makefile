@@ -6,7 +6,7 @@
 #    By: pcampos- <pcampos-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/02 11:54:02 by pcampos-          #+#    #+#              #
-#    Updated: 2023/05/05 18:05:03 by pcampos-         ###   ########.fr        #
+#    Updated: 2023/05/16 10:57:31 by pcampos-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,7 +42,7 @@ CFLAGS  =        -Wall -Werror -Wextra -std=c++98 -g -fsanitize=address
 
 ############### FILES ################
 
-SRCS_   =        main.cpp
+SRCS_   =        main.cpp \
 
 SRCS    =        $(addprefix $(_SRC), $(SRCS_))
 OBJS    =        $(patsubst $(_SRC)%.cpp, $(_OBJ)%.o, $(SRCS))
