@@ -6,7 +6,7 @@
 /*   By: pcampos- <pcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 17:27:47 by pcampos-          #+#    #+#             */
-/*   Updated: 2023/05/25 20:15:08 by pcampos-         ###   ########.fr       */
+/*   Updated: 2023/05/26 15:45:05 by pcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ int main()
 	std::cout << mstack.top() << std::endl;
 	std::cout << mstack.size() << std::endl;
 
+	std::cout << std::endl;
+
 	mstack.push(3);
 	mstack.push(58);
 	mstack.push(737);
@@ -39,7 +41,15 @@ int main()
 	std::cout << *it << std::endl;
 	++it;
 	}
+
+	std::cout << std::endl;
+	
 	std::stack<int> s(mstack);
+	std::cout << mstack.top() << std::endl;
+	std::cout << s.top() << std::endl;
+	s.pop();
+	std::cout << mstack.top() << std::endl;
+	std::cout << s.top() << std::endl;
 
 	return 0;
 }
