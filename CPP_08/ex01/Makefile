@@ -6,7 +6,7 @@
 #    By: pcampos- <pcampos-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/02 11:54:02 by pcampos-          #+#    #+#              #
-#    Updated: 2023/05/18 11:55:29 by pcampos-         ###   ########.fr        #
+#    Updated: 2023/05/26 12:59:16 by pcampos-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,7 @@ _LIB    =
 
 ############### COMPILER ################
 
-CC      =        c++
+CC      =        g++
 AR      =        ar rcs
 CFLAGS  =        -Wall -Werror -Wextra -std=c++98 -g -fsanitize=address
 

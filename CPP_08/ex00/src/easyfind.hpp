@@ -6,7 +6,7 @@
 /*   By: pcampos- <pcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 11:47:33 by pcampos-          #+#    #+#             */
-/*   Updated: 2023/05/18 11:49:10 by pcampos-         ###   ########.fr       */
+/*   Updated: 2023/05/26 12:32:53 by pcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,13 @@
 
 # include <iostream>
 # include <stdexcept>
-# include <vector>
+# include <algorithm>
 
 template< typename T >
 typename T::iterator	easyfind(T &stack, int needle){
-	for (typename T::iterator it = stack.begin(); it != stack.end(); ++it)
-	{
-		if(*it == needle)
-			return (it);
-	}
+	typename T::iterator it = std::find(stack.begin(), stack.end(), needle);
+	if(it != stack.end())
+		return (it);
 	throw std::exception();
 };
 
