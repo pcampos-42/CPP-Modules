@@ -6,13 +6,13 @@
 #    By: pcampos- <pcampos-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/02 11:54:02 by pcampos-          #+#    #+#              #
-#    Updated: 2023/05/29 23:53:06 by pcampos-         ###   ########.fr        #
+#    Updated: 2023/06/01 18:39:53 by pcampos-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 ################ PROGRAM ################
 
-NAME	    =    a.out
+NAME	    =    PmergeMe
 
 ################ TERMINAL ###############
 
@@ -42,7 +42,8 @@ CFLAGS  =        -Wall -Werror -Wextra -std=c++98 -g -fsanitize=address
 
 ############### FILES ################
 
-SRCS_   =        main.cpp
+SRCS_   =        main.cpp \
+				 PmergeMe.cpp
 
 SRCS    =        $(addprefix $(_SRC), $(SRCS_))
 OBJS    =        $(patsubst $(_SRC)%.cpp, $(_OBJ)%.o, $(SRCS))

@@ -1,24 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   RPN.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pcampos- <pcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/16 17:27:47 by pcampos-          #+#    #+#             */
-/*   Updated: 2023/06/01 12:53:43 by pcampos-         ###   ########.fr       */
+/*   Created: 2023/06/01 10:40:49 by pcampos-          #+#    #+#             */
+/*   Updated: 2023/06/01 12:53:39 by pcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "RPN.hpp"
+#ifndef RPN_HPP
+# define RPN_HPP
 
-int	main(int ac, char** av)
+# include <stack>
+# include <iostream>
+# include <string>
+# include <algorithm>
+
+class RPN
 {
-	if (ac != 2)
-	{
-		std::cout << "Wrong number of arguments" << std::endl;
-		return (0);
-	}
-	RPN rpn(av[1]);
-	rpn.calculate();
-}
+private:
+
+	std::stack<int> _stack;
+	std::string _expression;
+	
+	RPN();
+	RPN(RPN const &src);
+	RPN& operator=(RPN const &rhs);
+
+	void	make_calc(size_t i);
+
+public:
+
+	RPN(std::string expression);
+	~RPN();
+
+	void	calculate();
+};
+
+
+#endif
