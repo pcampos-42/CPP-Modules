@@ -6,7 +6,7 @@
 /*   By: pcampos- <pcampos-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 17:27:47 by pcampos-          #+#    #+#             */
-/*   Updated: 2023/06/01 18:40:47 by pcampos-         ###   ########.fr       */
+/*   Updated: 2023/06/06 11:30:51 by pcampos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	main(int ac,  char** av)
 	std::list<int> L;
 	int n;
 
-	for (int i = 1; i < ac - 1; i++)
+	for (int i = 1; i < ac; i++)
 	{
 		for(size_t j = 0; j < strlen(av[i]); j++)
 		{
@@ -53,6 +53,5 @@ int	main(int ac,  char** av)
 	}
 
 	PmergeMe merger(V, L);
-	merger.sort("vector");
-	merger.sort("list");
+	merger.sort();
 }
